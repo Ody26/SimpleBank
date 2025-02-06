@@ -1,7 +1,5 @@
 postgres:
 	docker run --name postgres12 -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
-mysql:
-	docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=Taehyung7 -d mysql
 
 createdb:
 	docker exec -it postgres12 createdb --username=postgres --owner=postgres simplebank
