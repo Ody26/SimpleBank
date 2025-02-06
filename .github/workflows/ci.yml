@@ -1,4 +1,4 @@
-name: Go CI
+name: Test CI
 
 on:
   push:
@@ -37,8 +37,8 @@ jobs:
 
     - name: Install dependencies
       run: go mod tidy
-    
-    -name: Install golan-migrate
+
+    - name: Install golang-migrate
       run: |
         curl -L https://github.com/golang-migrate/migrate/releases/download/v4.18.2/migrate.linux-amd64.tar.gz | tar xvz
         sudo mv migrate.linux-amd64 /usr/bin/migrate
