@@ -15,11 +15,8 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "postgresql://postgres:Taehyung7@localhost:5432/simplebank?sslmode=disable" -verbose down
 
-sqlc:
-	docker run --rm -v "%cd%:/src" -w /src kjconroy/sqlc generate
-
 test:
-	go test -v -cover ./...
+	go test -v ./db/sqlc
 
 fixdirty:
 	migrate -path db/migration -database "postgresql://postgres:Taehyung7@localhost:5432/simplebank?sslmode=disable" force 1
